@@ -1,0 +1,14 @@
+.zentriert {
+  text-align: center;
+}
+
+.header-image {
+  height: 200px;
+
+  background-image: url("https://zero-to-mastery.github.io/travel-guide/static/media/BaganMyanmar.3b735d9e.jpg");
+}
+
+.app-logo {
+  animation: App-logo-spin 20s linear infinite;
+  height: 80px;
+}

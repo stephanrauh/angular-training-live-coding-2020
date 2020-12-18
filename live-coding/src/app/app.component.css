@@ -1,0 +1,11 @@
+p {
+  font-family: Lato;
+}
+
+.mit-rahmen {
+  border: 5px solid red;
+}
+
+td {
+  border-right: 2px solid;
+}
