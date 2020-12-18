@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  public unserAN = "2342342423423";
+
   constructor() { }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 
 <div class="row">
-  <div *ngFor="let cont of continents" class="col-4">
+  <div *ngFor="let cont of (countryService.continents | async)" class="col-4">
 
     <app-continent-tile  [continent]="cont">
 

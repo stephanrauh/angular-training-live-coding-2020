@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'app-overview',
@@ -7,10 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  @Input()
-  public continents!: Array<string>;
-
-  constructor() {
+  constructor(public countryService: CountryService) {
    }
 
   ngOnInit() {

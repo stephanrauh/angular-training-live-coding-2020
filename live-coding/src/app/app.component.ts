@@ -1,28 +1,26 @@
-import { Component, VERSION } from "@angular/core";
+import { Component, VERSION, OnInit } from '@angular/core';
 import { countries } from "./services/countries-service-mockup";
 import { CountryDetails } from "./services/country-details";
+import { CountryService } from './country.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: "my-app",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"]
 })
-export class AppComponent {
-  public smallCountryNames: Array<string>;
+export class AppComponent implements OnInit {
 
-  public continents: Array<string>;
+  // public continents!: Observable<Array<string>>;
 
-  constructor() {
-    const countriesWithType = countries as Array<CountryDetails>;
-
-
-    const continentsWithDuplicates = countriesWithType.map(
-      country => country.region
-    );
-    this.continents = [...new Set(continentsWithDuplicates)]; // destructuring
-
-    this.smallCountryNames = countries
-      .filter(country => country.population < 300)
-      .map(country => country.name);
+  constructor(public countryService: CountryService) {
+    // this.continents = this.countryService.continents;
   }
+
+  ngOnInit(): void {
+  }
+
+  public test(): void {
+  }
+
 }

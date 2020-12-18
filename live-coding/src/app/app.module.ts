@@ -11,16 +11,18 @@ import { CountryComponent } from './country/country.component';
 import { PauseComponent } from './pause/pause.component';
 import { ContinentTileComponent } from './continent-tile/continent-tile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+import { ArbeitnehmernummerPipe } from './arbeitnehmernummer.pipe';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, NgbModule ],
+  imports:      [ BrowserModule, FormsModule, NgbModule, HttpClientModule ],
   declarations: [
     AppComponent,
     HelloComponent,
     HeaderComponent,
     MenuComponent,
     OverviewComponent,
-    CountryComponent, PauseComponent, ContinentTileComponent ],
+    CountryComponent, PauseComponent, ContinentTileComponent, ArbeitnehmernummerPipe ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
