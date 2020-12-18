@@ -13,16 +13,31 @@ import { ContinentTileComponent } from './continent-tile/continent-tile.componen
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ArbeitnehmernummerPipe } from './arbeitnehmernummer.pipe';
+import { ErrorComponent } from './error/error.component';
+import { EditComponent } from './edit/edit.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, NgbModule, HttpClientModule ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    NgbModule,
+    HttpClientModule,
+    AppRoutingModule,
+  ],
   declarations: [
     AppComponent,
     HelloComponent,
     HeaderComponent,
     MenuComponent,
     OverviewComponent,
-    CountryComponent, PauseComponent, ContinentTileComponent, ArbeitnehmernummerPipe ],
-  bootstrap:    [ AppComponent ]
+    CountryComponent,
+    PauseComponent,
+    ContinentTileComponent,
+    ArbeitnehmernummerPipe,
+    ErrorComponent,
+    EditComponent,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
