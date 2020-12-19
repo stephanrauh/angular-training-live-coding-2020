@@ -1,39 +1,68 @@
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-2">
-    Name des Landes:
+<form novalidate #f="ngForm">
+  <div class="row mit-abstand">
+    <div class="col-1"></div>
+    <div class="col-2">Name des Landes:</div>
+    <div class="col-2">
+      <input name="countryname" [(ngModel)]="country.name" required
+             minlength="4"
+             #model="ngModel" />
+      <div class="error" *ngIf="model.errors?.required">
+        Dieses Feld ist ein Pflichtfeld!
+      </div>
+      <div class="error" *ngIf="model.errors?.minlength">
+        Bitte keine Abkürzungen verwenden!
+      </div>
+    </div>
   </div>
-  <div class="col-2">
-    <input>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-2">
-    Bevölkerung:
-  </div>
-  <div class="col-2">
-    <input>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-2">
-    Kontinent:
+  <div class="row mit-abstand">
+    <div class="col-1"></div>
+    <div class="col-2">Bevölkerung:</div>
+    <div class="col-2">
+      <input #population="ngModel" name="countrypopulation" [(ngModel)]="country.population" required />
+      <div class="error" *ngIf="population.errors?.required">
+        Dieses Feld ist ein Pflichtfeld!
+      </div>
+    </div>
   </div>
-  <div class="col-2">
-    <input>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-2">
-    Fahne:
+  <div class="row mit-abstand">
+    <div class="col-1"></div>
+    <div class="col-2">Kontinent:</div>
+    <div class="col-2">
+      <input #region="ngModel" name="countryregion" [(ngModel)]="country.region" required />
+      <div class="error" *ngIf="region.errors?.required">
+        Dieses Feld ist ein Pflichtfeld!
+      </div>
+    </div>
   </div>
-  <div class="col-2">
-    <input>
+
+  <div class="row mit-abstand">
+    <div class="col-1"></div>
+    <div class="col-2">Fahne:</div>
+    <div class="col-2">
+      <input #flag="ngModel" name="countryflag" [(ngModel)]="country.flag" required />
+      <div class="error" *ngIf="flag.errors?.required">
+        Dieses Feld ist ein Pflichtfeld!
+      </div>
+    </div>
   </div>
-</div>
+
+  <div class="row mit-abstand">
+    <div class="col-1"></div>
+    <div class="col-2">Fahne:</div>
+    <div class="col-2">
+      <img style="width:100px" [src]="country.flag">
+    </div>
+  </div>
+
+  <div class="row mit-abstand">
+    <div class="col-1"></div>
+    <div class="col-2">Fahne:</div>
+    <div class="col-2">
+      <button class="btn btn-primary" (click)="speichern()">Speichern</button>
+    </div>
+  </div>
+
+</form>

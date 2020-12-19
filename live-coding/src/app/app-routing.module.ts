@@ -6,7 +6,7 @@ import { EditComponent } from './edit/edit.component';
 
 const routes: Routes = [
   { path: 'start', component: OverviewComponent },
-  { path: 'edit-country', component: EditComponent },
+  { path: 'edit-country/:country', component: EditComponent },
   { path: '', redirectTo: '/start', pathMatch: 'full' },
   { path: '**', component: ErrorComponent },
 ];

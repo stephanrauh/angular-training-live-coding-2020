@@ -2,15 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
-import { countries } from './services/countries-service-mockup';
-
-interface RestServiceDetails {
-  name: string;
-  region: string;
-  flag: string;
-  population: number;
-  capital: string;
-}
+import { RestServiceDetails } from './rest-service-details';
 
 @Injectable({
   providedIn: 'root'
@@ -53,5 +45,12 @@ export class CountryService {
   extractCountries(data: RestServiceDetails[]) {
     const countries = data.map(country => country.name);
     return countries;
+  }
+
+  public extractCountryDetails(country: string): Observable<RestServiceDetails> {
+    return this.httpClient.get<Array<RestServiceDetails>>(`https://restcountries.eu/rest/v2/name/${country}`)
+    .pipe(
+      map((data) => data[0]),
+    );
   }
 }
