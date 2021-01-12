@@ -1,6 +1,6 @@
 import { RestServiceDetails } from './../rest-service-details';
 import { Component, OnInit } from '@angular/core';
-import { CountryService } from '../country.service';
+import { CountryService } from '../services/country.service';
 import { ActivatedRoute } from '@angular/router';
 import { ResourceLoader } from '@angular/compiler';
 
@@ -17,15 +17,14 @@ export class EditComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(param => this.laden(param["country"]));
+    this.route.params.subscribe(param => this.load(param["country"]));
   }
 
-  public laden(country: string): void {
+  public load(country: string): void {
     this.countryService.extractCountryDetails(country)
     .subscribe(data => this.country = data);
   }
-  public speichern(): void {
+  public save(): void {
     alert("Das Speichern kommt nächstes Jahr dran.");
   }
-
 }

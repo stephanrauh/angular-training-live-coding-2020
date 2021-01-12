@@ -9,3 +9,14 @@ p {
 td {
   border-right: 2px solid;
 }
+
+.background-image {
+  background: linear-gradient(to right bottom,rgba(2,2,2,.3),rgba(0,0,0,.856)),url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&ixid=eyJhcHBfaWQiOjEyMDd9&ixlib=rb-1.2.1&q=80&w=1352);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-origin: content-box;
+  background-attachment: fixed;
+  background-position: 50%;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f46732",endColorstr="#66fcb46f",GradientType=0);
+  height: calc(100vh - 300px);
+}

@@ -3,12 +3,38 @@
 }
 
 .header-image {
-  height: 200px;
+  height: 300px;
+  background-position: 10% 80%;
+  background-repeat: no-repeat;
+    background-size: cover;
+    background-origin: content-box;
 
   background-image: url("https://zero-to-mastery.github.io/travel-guide/static/media/BaganMyanmar.3b735d9e.jpg");
+}
+
+.header-text {
+  background: #000;
+  letter-spacing: 7px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4em;
+  text-transform: uppercase;
+  text-shadow: 4px 3px 0 #fff;
 }
 
 .app-logo {
   animation: App-logo-spin 20s linear infinite;
   height: 80px;
 }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+

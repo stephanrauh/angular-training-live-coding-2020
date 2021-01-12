@@ -1,7 +1,7 @@
 import { Component, VERSION, OnInit } from '@angular/core';
 import { countries } from "./services/countries-service-mockup";
 import { CountryDetails } from "./services/country-details";
-import { CountryService } from './country.service';
+import { CountryService } from './services/country.service';
 import { Observable } from 'rxjs';
 
 @Component({

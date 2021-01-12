@@ -12,10 +12,11 @@ import { PauseComponent } from './pause/pause.component';
 import { ContinentTileComponent } from './continent-tile/continent-tile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { ArbeitnehmernummerPipe } from './arbeitnehmernummer.pipe';
+import { ArbeitnehmernummerPipe } from './pipes/arbeitnehmernummer.pipe';
 import { ErrorComponent } from './error/error.component';
 import { EditComponent } from './edit/edit.component';
 import { AppRoutingModule } from './app-routing.module';
+import { SixItemsPipe } from './pipes/six-items.pipe';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { AppRoutingModule } from './app-routing.module';
     PauseComponent,
     ContinentTileComponent,
     ArbeitnehmernummerPipe,
+    SixItemsPipe,
     ErrorComponent,
     EditComponent,
   ],

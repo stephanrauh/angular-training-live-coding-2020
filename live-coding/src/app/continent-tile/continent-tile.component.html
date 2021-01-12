@@ -1,5 +1,11 @@
-
-
 <div class="tile">
-  {{continent}}
+  <h2>
+    {{continent}}
+  </h2>
+  <div>
+    <img class="cute-little-globe" [src]="images[continent]">
+  </div>
+  <div>
+    <span *ngFor="let country of (countries | sixItems); last as last">{{country}}<span *ngIf="!last">, </span> </span>
+  </div>
 </div>

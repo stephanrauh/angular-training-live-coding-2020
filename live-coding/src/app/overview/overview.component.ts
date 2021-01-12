@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CountryService } from '../country.service';
+import { CountryService } from '../services/country.service';
 
 @Component({
   selector: 'app-overview',
@@ -17,7 +17,7 @@ export class OverviewComponent implements OnInit {
   }
 
   public neuesLandAnlegen(): void {
-    this.router.navigateByUrl("edit-country");
+    this.router.navigateByUrl("edit-country/new");
   }
 
   public landLoeschen(): void {
