@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CountryService } from '../services/country.service';
+import { CountryService, CountryHashtable } from '../services/country.service';
 
 @Component({
   selector: 'app-overview',
@@ -8,9 +8,14 @@ import { CountryService } from '../services/country.service';
   styleUrls: ['./overview.component.css'],
 })
 export class OverviewComponent implements OnInit {
+
+  public countriesByContinent: CountryHashtable = {};
+
   constructor(public countryService: CountryService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.countryService.countriesByContinent.subscribe(hashmap => this.countriesByContinent = hashmap);
+  }
 
   public createCountry(): void {
     this.router.navigateByUrl('edit-country/new');
