@@ -4,7 +4,7 @@ import { OverviewComponent } from './overview/overview.component';
 import { ErrorComponent } from './error/error.component';
 import { EditComponent } from './edit/edit.component';
 import { CountryListComponent } from './country-list/country-list.component';
-import { LoginGuard } from './login.guard';
+import { LoginGuard } from './login/login.guard';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [

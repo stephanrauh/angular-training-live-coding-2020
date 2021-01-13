@@ -9,8 +9,6 @@ import { CountryService } from '../services/country.service';
 })
 export class OverviewComponent implements OnInit {
 
-  public test = ["Germany", "France"];
-
   constructor(public countryService: CountryService,
     private router: Router) {
    }
@@ -18,12 +16,12 @@ export class OverviewComponent implements OnInit {
   ngOnInit() {
   }
 
-  public neuesLandAnlegen(): void {
+  public createCountry(): void {
     this.router.navigateByUrl("edit-country/new");
   }
 
-  public landLoeschen(): void {
-    alert("Nein, das geht leider nicht.");
+  public deleteCountry(): void {
+    alert("I'm afraid that's not so easy. You'd rather ask the inhabitants of the country first.");
   }
 
 }

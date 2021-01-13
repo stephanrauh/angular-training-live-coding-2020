@@ -30,7 +30,7 @@ export class ContinentTileComponent implements OnInit {
   public continent!: string;
 
   @Input()
-  public countries: Array<string> | undefined;
+  public countries: Array<string> | undefined | null = [];
 
   constructor() { }
 

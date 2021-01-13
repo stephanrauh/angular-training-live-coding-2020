@@ -11,9 +11,7 @@ import { CountryService } from '../services/country.service';
 export class CountryListComponent implements OnInit {
   public continent!: string;
 
-  private _countries = new Subject<Array<string>>();
-
-  public countries = this._countries as Observable<Array<string>>;
+  public countries: Array<string> = [];
 
   constructor(
     private urlService: ActivatedRoute,
@@ -25,7 +23,8 @@ export class CountryListComponent implements OnInit {
       this.continent = params['continent'];
       if (this.continent) {
         this.countryService.countriesByContinent.subscribe((hashmap) => {
-          this._countries.next(hashmap[this.continent]);
+          this.countries = hashmap[this.continent];
+          console.log(this.countries);
         });
       }
     });

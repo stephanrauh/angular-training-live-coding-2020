@@ -1,0 +1,25 @@
+.tile {
+  height: 280px;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 20px;
+  margin: 20px;
+  padding-top: 30px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.distance-top {
+  margin-top: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 80%;
+}
+
+.row {
+  margin-bottom: 10px;
+}

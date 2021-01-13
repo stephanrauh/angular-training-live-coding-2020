@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, Input } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { RestServiceDetails } from '../rest-service-details';
 
@@ -18,33 +18,25 @@ export interface ICountryService {
   providedIn: 'root',
 })
 export class CountryService implements ICountryService {
-  public continents!: Observable<Array<string>>;
+  public continents = new BehaviorSubject<Array<string>>([]);
 
   public countries!: Array<string>;
 
-  // Observable<CountryHashtable>
-  private _countriesByContinent = new Subject<CountryHashtable>();
+  private _countriesByContinent = new BehaviorSubject<CountryHashtable>({});
 
-  public get countriesByContinent() {
-    return this._countriesByContinent as Observable<CountryHashtable>;
-  }
+  public countriesByContinent = this._countriesByContinent as Observable<CountryHashtable>;
 
   constructor(public httpClient: HttpClient) {
-    this._countriesByContinent.next({});
-
-
-
-
     const result = this.httpClient
       .get<Array<RestServiceDetails>>('https://restcountries.eu/rest/v2/all')
       .pipe(
-        tap((data) => this.extractContinents(data)),
+        tap((data) => this.continents.next(this.extractContinents(data))),
         tap((data) => this.extractCountriesByContinent(data)),
         map((data) => this.extractCountries(data)),
         tap((countries) => (this.countries = countries))
       );
     result.subscribe((data) => {
-      // console.log("Data im Subscribe: " + data);
+      // console.log("Data in subscribe callback: " + data);
     });
   }
 
