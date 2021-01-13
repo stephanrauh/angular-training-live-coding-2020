@@ -1,0 +1,12 @@
+h2 {
+  text-align: center;
+  color: white;
+}
+
+.tile {
+  height: 150px;
+  border: 1px solid gray;
+  background-color: white;
+  border-radius: 20px;
+  margin: 20px;
+}

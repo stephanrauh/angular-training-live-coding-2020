@@ -1,0 +1,8 @@
+<h2>{{continent}}</h2>
+
+<div class="row">
+  <div class="col-3 tile" *ngFor="let country of (countries | async)">
+    {{country}}
+  </div>
+</div>
+

@@ -14,8 +14,8 @@
 
 <div class="row">
   <div *ngFor="let cont of countryService.continents | async" class="col-4">
-    <a [routerLink]="['/view-continent']">
-      <app-continent-tile [continent]="cont" [countries]="countryService.countriesByContinent[cont]"> </app-continent-tile>
+    <a [routerLink]="['/country-list', cont]">
+      <app-continent-tile [continent]="cont" [countries]="(countryService.countriesByContinent | async)[cont]"> </app-continent-tile>
     </a>
   </div>
 </div>

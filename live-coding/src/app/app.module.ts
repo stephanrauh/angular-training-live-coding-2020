@@ -17,6 +17,7 @@ import { ErrorComponent } from './error/error.component';
 import { EditComponent } from './edit/edit.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SixItemsPipe } from './pipes/six-items.pipe';
+import { CountryListComponent } from './country-list/country-list.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { SixItemsPipe } from './pipes/six-items.pipe';
     SixItemsPipe,
     ErrorComponent,
     EditComponent,
+    CountryListComponent,
   ],
   bootstrap: [AppComponent],
 })

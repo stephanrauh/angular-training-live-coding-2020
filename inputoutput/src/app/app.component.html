@@ -1,0 +1,35 @@
+
+<div>
+Common component. The common number is {{commonNumber}}.
+<br>
+<button (click)="resetCounter()">reset</button>
+</div>
+
+<div class="boxed">
+<h1>Sender</h1>
+<app-sender
+  (counterChange)="this.commonNumber=$event">
+</app-sender>
+</div>
+
+<div class="boxed">
+  <h1>Sender (two-way-binding, verbose vesion)</h1>
+  <app-sender
+    [counter]="this.commonNumber"
+    (counterChange)="this.commonNumber=$event">
+
+  </app-sender>
+</div>
+
+<div class="boxed">
+  <h1>Sender (two-way-binding)</h1>
+  <app-sender
+    [(counter)]="this.commonNumber">
+  </app-sender>
+</div>
+
+
+<div class="boxed">
+  <h1>Receiver</h1>
+  <app-receiver [receivedNumber]="commonNumber"></app-receiver>
+</div>
