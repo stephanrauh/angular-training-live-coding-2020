@@ -32,9 +32,8 @@ export class CountryService implements ICountryService {
   constructor(public httpClient: HttpClient) {
     this._countriesByContinent.next({});
 
-    this.continents = this.httpClient
-      .get<Array<RestServiceDetails>>('https://restcountries.eu/rest/v2/all')
-      .pipe(map((data) => this.extractContinents(data)));
+
+
 
     const result = this.httpClient
       .get<Array<RestServiceDetails>>('https://restcountries.eu/rest/v2/all')

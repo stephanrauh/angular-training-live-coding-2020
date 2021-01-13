@@ -12,10 +12,10 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" *ngIf="countryService.countriesByContinent">
   <div *ngFor="let cont of countryService.continents | async" class="col-4">
     <a [routerLink]="['/country-list', cont]">
-      <app-continent-tile [continent]="cont" [countries]="(countryService.countriesByContinent | async)[cont]"> </app-continent-tile>
+      <app-continent-tile [continent]="cont" [countries]="test"> </app-continent-tile>
     </a>
   </div>
 </div>

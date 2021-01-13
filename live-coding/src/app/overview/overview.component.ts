@@ -9,6 +9,8 @@ import { CountryService } from '../services/country.service';
 })
 export class OverviewComponent implements OnInit {
 
+  public test = ["Germany", "France"];
+
   constructor(public countryService: CountryService,
     private router: Router) {
    }

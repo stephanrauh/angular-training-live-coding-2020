@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public commonNumber: number = 21;
 
+  public username = "<b>Super Admin</b>";
+
   public resetCounter(): void {
     this.commonNumber = 0;
   }
