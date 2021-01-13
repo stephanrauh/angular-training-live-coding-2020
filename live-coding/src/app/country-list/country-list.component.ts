@@ -13,10 +13,7 @@ export class CountryListComponent implements OnInit {
 
   public countries: Array<string> = [];
 
-  constructor(
-    private urlService: ActivatedRoute,
-    public countryService: CountryService
-  ) {}
+  constructor(private urlService: ActivatedRoute, public countryService: CountryService) {}
 
   ngOnInit(): void {
     this.urlService.params.subscribe((params: Params) => {
@@ -24,7 +21,6 @@ export class CountryListComponent implements OnInit {
       if (this.continent) {
         this.countryService.countriesByContinent.subscribe((hashmap) => {
           this.countries = hashmap[this.continent];
-          console.log(this.countries);
         });
       }
     });

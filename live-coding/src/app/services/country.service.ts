@@ -24,7 +24,8 @@ export class CountryService implements ICountryService {
 
   private _countriesByContinent = new BehaviorSubject<CountryHashtable>({});
 
-  public countriesByContinent = this._countriesByContinent as Observable<CountryHashtable>;
+  public countriesByContinent = this
+    ._countriesByContinent as Observable<CountryHashtable>;
 
   constructor(public httpClient: HttpClient) {
     const result = this.httpClient

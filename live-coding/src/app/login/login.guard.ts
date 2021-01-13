@@ -4,22 +4,20 @@ import { Observable } from 'rxjs';
 import { LoginService } from './login.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginGuard implements CanActivate {
-
   constructor(private loginService: LoginService, private router: Router) {}
 
   canActivate(
-
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if (this.loginService.isLoggedIn) {
-        return true;
-      }
-      this.loginService.targetUrl = state.url;
-      this.router.navigateByUrl("/login");
-      return false;
+    state: RouterStateSnapshot
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    if (this.loginService.isLoggedIn) {
+      return true;
+    }
+    this.loginService.targetUrl = state.url;
+    this.router.navigateByUrl('/login');
+    return false;
   }
-
 }
