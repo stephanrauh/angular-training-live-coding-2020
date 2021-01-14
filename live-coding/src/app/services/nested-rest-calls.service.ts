@@ -23,15 +23,15 @@ export class NestedRestCallsService {
         listOfContinents.forEach(continent => {
           this.countryNamesByContinent(continent).subscribe(
             countries => hashmap[continent] = countries
-          )
-        })
+          );
+        });
       }
     );
     return hashmap;
   }
 
   public arrayOfCountries(): Observable<string[][]> {
-    const continents = ["Europe", "Asia", "Africa"];
+    const continents = ['Europe', 'Asia', 'Africa'];
 
     const listOfObservables: Array<Observable<Array<string>>> = continents.map(continent => this.countryNamesByContinent(continent));
 
@@ -46,12 +46,12 @@ export class NestedRestCallsService {
   }
 
   public hashMapOfCountriesWithPredefinedContinents(): Observable<CountryHashtable> {
-    const continents = ["Europe", "Asia", "Africa"];
+    const continents = ['Europe', 'Asia', 'Africa'];
 
     const listOfObservables = continents.map(continent => {
       return {
-        continent: continent,
-        countries: this.countryNamesByContinent(continent)}
+        continent,
+        countries: this.countryNamesByContinent(continent)};
       });
 
     // TODO: convert it to an Observable containing a CountryHashtable

@@ -22,6 +22,6 @@ export class OverviewComponent implements OnInit {
   }
 
   public deleteCountry(): void {
-    alert("I'm afraid that's not so easy. You'd rather ask the inhabitants of the country first.");
+    alert('I\'m afraid that\'s not so easy. You\'d rather ask the inhabitants of the country first.');
   }
 }

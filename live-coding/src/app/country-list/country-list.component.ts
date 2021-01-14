@@ -17,7 +17,7 @@ export class CountryListComponent implements OnInit {
 
   ngOnInit(): void {
     this.urlService.params.subscribe((params: Params) => {
-      this.continent = params['continent'];
+      this.continent = params.continent;
       if (this.continent) {
         this.countryService.countriesByContinent.subscribe((hashmap) => {
           this.countries = hashmap[this.continent];

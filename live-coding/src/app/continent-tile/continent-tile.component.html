@@ -6,6 +6,8 @@
     <img class="cute-little-globe" [src]="images[continent]">
   </div>
   <div *ngIf="countries">
-    <span *ngFor="let country of (countries | sixItems); last as last">{{country}}<span *ngIf="!last">, </span> </span>
+    <span class="country-span" *ngFor="let country of (countries | sixItems); last as last">{{country}}
+      <span class="comma-span" *ngIf="!last">, </span>
+    </span>
   </div>
 </div>

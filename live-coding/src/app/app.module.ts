@@ -18,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SixItemsPipe } from './pipes/six-items.pipe';
 import { CountryListComponent } from './country-list/country-list.component';
 import { LoginComponent } from './login/login.component';
+import { CountryService } from './services/country.service';
 
 @NgModule({
   imports: [
@@ -43,6 +44,7 @@ import { LoginComponent } from './login/login.component';
     CountryListComponent,
     LoginComponent,
   ],
+  providers: [CountryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

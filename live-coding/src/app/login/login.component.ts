@@ -26,10 +26,10 @@ export class LoginComponent implements OnInit {
   }
 
   public doLogIn(): void {
-    const result: AbstractControl  = this.credentialsFormGroup.get("username") as AbstractControl;
+    const result: AbstractControl  = this.credentialsFormGroup.get('username') as AbstractControl;
     const username: string = result.value;
 
-    const password = (this.credentialsFormGroup.get("username") as AbstractControl).value;
+    const password = (this.credentialsFormGroup.get('username') as AbstractControl).value;
 
     this.loginService.login(username, password);
   }

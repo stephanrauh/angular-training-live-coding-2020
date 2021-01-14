@@ -17,7 +17,7 @@ export class EditComponent implements OnInit {
               private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(param => this.load(param["country"]));
+    this.route.params.subscribe(param => this.load(param.country));
   }
 
   public load(country: string): void {
@@ -25,6 +25,6 @@ export class EditComponent implements OnInit {
     .subscribe(data => this.country = data);
   }
   public save(): void {
-    alert("Das Speichern kommt nächstes Jahr dran.");
+    alert('Das Speichern kommt nächstes Jahr dran.');
   }
 }
