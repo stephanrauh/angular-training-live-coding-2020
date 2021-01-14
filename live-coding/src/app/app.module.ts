@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +22,8 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
   imports: [
     BrowserModule,
-    FormsModule,
+    FormsModule, // support for template driven forms
+    ReactiveFormsModule, // support for reactive forms
     NgbModule,
     HttpClientModule,
     AppRoutingModule,
